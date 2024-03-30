@@ -29,6 +29,6 @@ jobs:
           ECR_REPOSITORY: ecr-flask-server
           IMAGE_TAG: Latest
 
-        run:
-          docker build -t 439217996440.dkr.ecr.ap-south-1.amazonaws.com/ecr-flask-server:Latest .
-          docker push 439217996440.dkr.ecr.ap-south-1.amazonaws.com/ecr-flask-server:Latest
+        run: |
+          docker buildx build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
