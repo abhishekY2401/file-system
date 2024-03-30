@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["flask", "run"]
+CMD ["python", "main.py"]
